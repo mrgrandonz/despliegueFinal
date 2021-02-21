@@ -1,0 +1,13 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
+}
+
+.link{
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: red;
+}
