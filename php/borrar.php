@@ -10,20 +10,26 @@
 
 <body>
     <?php
+    //Archivo que borra un registro de cliente de la tabla clientes
     echo "<h1>BASES DE DATOS / Borrar</h1>";
+
+    //Con la linea a continuación, obtenemos los datos del archivo de configuración
     require_once('config.php');
     $dbname = "bdphp1";
 
-    // Create connection 
+    //Se crea la conexión a la base de datos
     $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-    // Check connection 
+    // Verifica la conexión 
     if (!$conn) {
         die("Conexión fallida: " . mysqli_connect_error());
     }
+
+    //Sentencia que elimina los datos de un cliente en la base de datos
     $query = "DELETE FROM clientes WHERE id=3";
     $resultado = mysqli_query($conn, $query);
 
+    //Crea mensajes de alerta, los cuales indican el éxito o fracaso de la operación
     if ($resultado === TRUE) {
         echo "<h3 class='alerta'>Registro eliminado correctamente.</h3>";
     } else {
